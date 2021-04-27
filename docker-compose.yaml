@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  app:
+    build: ./
+    container_name: app
+    restart: ${RESTART_POLICY}
+    environment:
+      - TZ
+      - SERVER_PORT
+      - JOB1_CRON_EXPRESSION
+      - JOB2_CRON_EXPRESSION
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
